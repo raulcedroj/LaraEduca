@@ -14,20 +14,20 @@
             <div class="space-y-8">
                 @foreach ($users as $user)
                     <div class="bg-white shadow-md rounded-xl p-6 flex justify-between items-center" wire:key="user-{{ $user->id }}">
-                        <div>
-                        <p class="text-gray-800 flex items-center"><x-icons.user class="mr-2" /> {{ $user->name }}</p>
-                        <p class="text-gray-800 flex items-center"><x-icons.mail class="mr-2" /> {{ $user->email }}</p>
-                        <p class="text-gray-800 flex items-center"><x-icons.shield-check class="mr-2" /> {{ $user->roles->first()->name }}</p>
+                        <div class="space-y-3">
+                        <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">person</span> {{ $user->name }}</p>
+                        <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">mail</span> {{ $user->email }}</p>
+                        <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">verified_user</span> {{ $user->roles->first()->name }}</p>
                         <!-- Mostrar más información del usuario si lo deseas -->
                     </div>
 
                         <div class="">
                         <button wire:click="edit({{ $user->id }})">
-                            <x-icons.pencil-alt class="hover:text-green-500 cursor-pointer text-gray-800" />
+                            <span class="material-symbols-outlined hover:text-green-500 cursor-pointer text-gray-800">edit</span>
                         </button>
 
                         <button wire:click="delete({{ $user->id }})">
-                            <x-icons.x-circle class="hover:text-red-600 cursor-pointer text-gray-800" />
+                            <span class="material-symbols-outlined hover:text-red-600 cursor-pointer text-gray-800">delete</span>
                         </button>
 
                     </div>

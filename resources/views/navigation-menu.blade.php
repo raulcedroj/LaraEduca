@@ -12,15 +12,22 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="flex space-x-1 items- justify-center">
+                        <span class="material-symbols-outlined">home</span><span>{{ __('Dashboard') }} </span>
                     </x-nav-link>
 
-                    {{--@if (Auth::user()->hasRole('admin'))
+                    @if (Auth::user()->hasRole('admin'))
                         <x-nav-link href="{{ route('adminPanel') }}" :active="request()->routeIs('adminPanel')">
-                            {{ __('Admin Panel') }}
+                            <span class="material-symbols-outlined">
+                                shield_person
+                                </span>{{ __('Admin Panel') }} 
                         </x-nav-link>
-                    @endif--}}
+                    @endif
+
+                    <x-nav-link href="{{ route('Juego1') }}" :active="request()->routeIs('Juego1')" class="flex space-x-1 items- justify-center">
+                        <span class="material-symbols-outlined">stadia_controller</span><span>{{ __('Juego 1') }} </span>
+                    </x-nav-link>
+
                 </div>
             </div>
 

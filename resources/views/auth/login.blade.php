@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="{{asset('logo-laraeduca.png')}}" alt="logo" class="w-52">
         </x-slot>
 
         <x-validation-errors class="mb-4" />

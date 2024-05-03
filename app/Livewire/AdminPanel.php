@@ -41,6 +41,7 @@ class AdminPanel extends Component
 
         $this->closeModals();
         //$this->reset(['name', 'email']);
+        toastr()->success('User updated successfully!',' ');
     }
 
     public function delete($userId)
@@ -48,7 +49,7 @@ class AdminPanel extends Component
         $user = User::find($userId);
         $user->posts()->delete();
         $user->delete();
-
+        toastr()->success('User deleted successfully!',' ');
     }
 
     public function mount(){

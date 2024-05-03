@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
 Route::middleware([
@@ -26,5 +26,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::view('/adminPanel', 'admin')->middleware('auth')->name('adminPanel');
+    Route::view('/adminPanel', 'admin')->middleware('auth', 'admin')->name('adminPanel');
+
+    Route::get('/juego1', function () {
+        return view('juegos.juego1');
+    })->name('juego1');
 });
