@@ -17,7 +17,15 @@
                         <div class="space-y-3">
                         <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">person</span> {{ $user->name }}</p>
                         <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">mail</span> {{ $user->email }}</p>
-                        <p class="text-gray-800 flex items-center"><span class="material-symbols-outlined mr-2">verified_user</span> {{ $user->roles->first()->name }}</p>
+                        <p class="text-gray-800 flex items-center capitalize">
+                            <span class="material-symbols-outlined mr-2">verified_user</span>
+                            @if (!$user->roles->isEmpty() && $user->roles->first())
+                                {{ $user->roles->first()->name }}
+                            @else
+                                No se ha asignado un rol
+                            @endif
+                        </p>
+                        
                         <!-- Mostrar más información del usuario si lo deseas -->
                     </div>
 
@@ -65,7 +73,7 @@
                     @foreach ($roles as $role)
                         <label class="inline-flex items-center">
                             <input type="radio" wire:model="userEdit.role_id" value="{{ $role->id }}" class="form-radio">
-                            <span class="ml-2">{{ $role->name }}</span>
+                            <span class="ml-2 capitalize">{{ $role->name }}</span>
                         </label>
                     @endforeach
                 </div>

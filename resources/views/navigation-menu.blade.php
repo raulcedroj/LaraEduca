@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-blue-200">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -25,8 +25,21 @@
                     @endif
 
                     <x-nav-link href="{{ route('Juego1') }}" :active="request()->routeIs('Juego1')" class="flex space-x-1 items- justify-center">
-                        <span class="material-symbols-outlined">stadia_controller</span><span>{{ __('Juego 1') }} </span>
+                        <span class="material-symbols-outlined">stadia_controller</span><span>{{ __('Juego Musica') }} </span>
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('Juego2') }}" :active="request()->routeIs('Juego2')" class="flex space-x-1 items- justify-center">
+                        <span class="material-symbols-outlined">stadia_controller</span><span>{{ __('Juego Historia') }} </span>
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('Juego3') }}" :active="request()->routeIs('Juego3')" class="flex space-x-1 items- justify-center">
+                        <span class="material-symbols-outlined">stadia_controller</span><span>{{ __('Juego Ahorcado') }} </span>
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('Cursos') }}" :active="request()->routeIs('Cursos')" class="flex space-x-1 items- justify-center">
+                        <span class="material-symbols-outlined">school</span><span>{{ __('Cursos') }} </span>
+                    </x-nav-link>
+
 
                 </div>
             </div>
@@ -138,14 +151,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+
         </div>
     </div>
 

@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return $this->hasRole('admin');
     }
+
+    public function cursos()
+    {
+        return $this->hasMany(Curso::class, 'user_id');
+    }
 }
